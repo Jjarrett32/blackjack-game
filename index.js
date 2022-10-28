@@ -1,5 +1,5 @@
-let firstCard = 10
-let secondCard = 10
+let firstCard = 8
+let secondCard = 12
 let cards = [firstCard, secondCard]//array -order list of items
 let sum = firstCard + secondCard
 let hasBlackJack = false
