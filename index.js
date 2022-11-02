@@ -10,6 +10,11 @@ let messageEl = document.getElementById("message-el")
 //let sumEl  = document.getElementById("sum-el")its the same thing as line 11 and its also the same concept as line 9
 let sumEl  = document.querySelector("#sum-el")
 
+
+function startGame() {
+    renderGame()
+}
+
 function renderGame(){
     cardsEl.textContent = "Cards: " + cards[0] + " " + cards[1]
     sumEl.textContent = "Sum: " + sum
@@ -21,8 +26,8 @@ function renderGame(){
     }else {
         message = "you're out of the game"};
         console.log("message")
-        messageEl.textContent = message;
     }
+        messageEl.textContent = message;
     function newCard() {
         cardsEl.textContent = "Cards: " + sum
         sumEl.textContent = "Sum: " + sum 
@@ -32,6 +37,26 @@ function renderGame(){
         renderGame();
 
     }
-    function startGame() {
-        renderGame()
-    }
+   let myFriend = [
+    race = "black",
+    age = 33,
+    genger = "male",
+    married = true
+   ]
+   console.log(myFriend)
+   let myBio = [
+    age = 32,
+    race = "black",
+    veteran = false 
+   ]
+
+   let messages = [
+    "Im home.",
+    "I hate you",
+    "Im horny"
+   ]
+   let newMessage = "I love you"
+   messages.push(newMessage)
+   console.log(messages)
+messages.pop(newMessage)
+console.log(messages)
