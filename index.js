@@ -1,20 +1,23 @@
-let firstCard = 8
-let secondCard = 12
-let cards = [firstCard, secondCard]//array -order list of items
-let sum = firstCard + secondCard
+let cards = []//array -order list of items
+let sum = 0
 let hasBlackJack = false
-let isAlive = true
+let isAlive = false
 let message = ""
 let messageEl = document.getElementById("message-el")
-//let sumEl  = document.getElementById("sum-el")its the same thing as line 11 and its also the same concept as line 9
-let sumEl  = document.querySelector("#sum-el")
+let sumEl  = document.querySelector("#sum-el")//let sumEl  = document.getElementById("sum-el")its the same thing as line 11 and its also the same concept as line 6
 let cardsEl = document.getElementById("cards-el")
+let playerEl = document.getElementById("player-el")
 
 function getRandomCard() {
-    let randomCard = Math.floor(Math.random() *13 ) + 1
-    return randomCard
+    let randomNumber = Math.floor(Math.random() *13 ) + 1
+    if(randomNumber > 10){
+        return 10
+    }else if(randomNumber === 1){
+        return 11
+    }else {
+        return randomNumber
+    }  
 }
-console.log(randomCard())
 
 function startGame() {
     isAlive = true
@@ -24,6 +27,7 @@ function startGame() {
     sum = firstCard + secondCard
     renderGame()
 }
+
 function renderGame(){
     cardsEl.textContent = "Cards: "
     for(let i= 0; i < cards.length; i++) {
@@ -38,18 +42,18 @@ function renderGame(){
     
     }else {
         isAlive = false
-        message = "you're out of the game"};
-        console.log("message")
-        
+        message = "you're out of the game"
+    };
+    messageEl.textContent = message;
     }
-        messageEl.textContent = message;
+       
     function newCard() {
-        let card = getRandomCard
-        sum += card
-        cards.push(card)
-        console.log(cards)
-        renderGame();
-
+        if(isAlive === true && hasBlackJack === false) {
+            let card = getRandomCard()
+            sum += card
+            cards.push(card)
+            renderGame() 
+        }
     }
     function startGame() {
         renderGame()
