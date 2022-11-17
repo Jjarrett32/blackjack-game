@@ -30,16 +30,16 @@ function getRandomCard() {
 function startGame() {
     isAlive = true
     let firstCard = getRandomCard()
-    let secondCard = getRandomCard()
-    cards = [firstCard, secondCard]
-    sum = firstCard + secondCard
+    // let secondCard = getRandomCard()
+    Cards = [firstCard]
+    sum = firstCard 
     renderGame()
 }
 
 function renderGame(){
     cardsEl.textContent = "Cards: "
-    for(let i= 0; i < cards.length; i++) {
-        cardsEl.textContent = cards[i] + " "
+    for(let i= 0; i < Cards.length; i++) {
+        cardsEl.textContent = Cards[i] + " "
     }
      
     sumEl.textContent = "Sum: " + sum
@@ -49,8 +49,8 @@ function renderGame(){
         message = "Wohoo! You've got Blackjack!"
         hasBlackJack = true
     }else {
+       message = "you're out of the game"
         isAlive = false
-        message = "you're out of the game"
     }
     messageEl.textContent = message
     }
