@@ -1,5 +1,5 @@
 
-let cards = []//array -order list of items
+let Cards = []//array -order list of items
 let sum = 0
 let hasBlackJack = false
 let isAlive = false
@@ -56,13 +56,11 @@ function renderGame(){
     }
        
     function newCard() {
-        if(isAlive === true && hasBlackJack === false) {
+        if ( isAlive === true && hasBlackJack === false) {
             let card = getRandomCard()
             sum += card
-            cards.push(card)
+            Cards.push(card)
             renderGame() 
         }
     }
-    function startGame() {
-        renderGame()
-    }
+    
